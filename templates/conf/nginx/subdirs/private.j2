@@ -1,0 +1,7 @@
+  location /private {
+    root /usr/share/nginx/www/private/;
+    autoindex                   on;
+    try_files                   $uri $uri/ =404;
+    auth_basic                  'Private Material';
+    auth_basic_user_file        /etc/nginx/htpasswd;
+  }
