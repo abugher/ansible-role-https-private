@@ -33,3 +33,4 @@ lines_in_files:
     dest:               '/etc/fstab'
 restart_services:
   - 'nginx'
+  - 'nginx'
