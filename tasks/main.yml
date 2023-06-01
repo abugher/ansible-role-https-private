@@ -1,5 +1,5 @@
 ---
-- include_vars:         "../../../sensitive_ansible/roles/{{ role_name }}/vars/main.yml"
+- include_vars:         "../../../sensitive-ansible/roles/{{ role_name }}/vars/main.yml"
 - include:              '../tasks/create_files.yml'
 - include:              '../tasks/template_files.yml'
 - include:              '../tasks/install_files.yml'
