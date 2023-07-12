@@ -1,4 +1,12 @@
 ---
+lines_in_files:
+  - line:               'aaron-phone@files:/storage/aaron-phone/sdcard/DCIM/Camera/     /usr/share/nginx/www/private/pictures   fuse.sshfs      auto,_netdev,reconnect,delay_connect,defaults,noatime,nodev,nosuid,noexec,user,idmap=user,allow_other,uid=0,gid=33       0 2'
+    regexp:             'aaron-phone@files:/storage/aaron-phone/'
+    dest:               '/etc/fstab'
+shell_commands_ignore_result:
+  - command:            if mountpoint /usr/share/nginx/www/private/pictures; then umount /usr/share/nginx/www/private/pictures && mount /usr/share/nginx/www/private/pictures; else mount /usr/share/nginx/www/private/pictures; fi
+    user:               'root'
+    chdir:              '/'
 create_files:
   - path:               '/usr/share/nginx/www/private'
     owner:              'root'
@@ -27,10 +35,6 @@ install_files:
     mode:               '0644'
     src:                'files/conf/nginx/subdirs/private'
     dest:               '/etc/nginx/subdirs/private'
-lines_in_files:
-  - line:               'aaron-phone@files:/storage/aaron-phone/sdcard/DCIM/Camera/     /usr/share/nginx/www/private/pictures   fuse.sshfs      auto,_netdev,reconnect,delay_connect,defaults,noatime,nodev,nosuid,noexec,user,idmap=user,allow_other,uid=1003,gid=33       0 2'
-    regexp:             'aaron-phone@files:/storage/aaron-phone/'
-    dest:               '/etc/fstab'
 restart_services:
   - 'nginx'
   - 'nginx'
