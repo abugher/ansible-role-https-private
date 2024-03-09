@@ -1,11 +1,11 @@
 ---
 - include_vars:         "../../../sensitive-ansible/roles/{{ role_name }}/vars/main.yml"
-- include:              '../tasks/lines_in_files.yml'
-- include:              '../tasks/shell_commands_ignore_result.yml'
-- include:              '../tasks/create_files.yml'
-- include:              '../tasks/template_files.yml'
-- include:              '../tasks/install_files.yml'
-- include:              '../tasks/restart_services.yml'
+- include_tasks:        '../tasks/lines_in_files.yml'
+- include_tasks:        '../tasks/shell_commands_ignore_result.yml'
+- include_tasks:        '../tasks/create_files.yml'
+- include_tasks:        '../tasks/template_files.yml'
+- include_tasks:        '../tasks/install_files.yml'
+- include_tasks:        '../tasks/restart_services.yml'
   when:                 create_files_result.changed
                         or install_files_result.changed
                         or lines_in_files_result.changed
