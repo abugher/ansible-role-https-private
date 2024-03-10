@@ -3,7 +3,7 @@ lines_in_files:
   - line:               'aaron-phone@files:/storage/aaron-phone/sdcard/DCIM/Camera/     /usr/share/nginx/html/private/pictures   fuse.sshfs      auto,_netdev,reconnect,delay_connect,defaults,noatime,nodev,nosuid,noexec,user,idmap=user,allow_other,uid=0,gid=33       0 2'
     regexp:             'aaron-phone@files:/storage/aaron-phone/'
     dest:               '/etc/fstab'
-shell_commands_ignore_result:
+shell_commands_ignore_change:
   - command:            if mountpoint /usr/share/nginx/html/private/pictures; then umount /usr/share/nginx/html/private/pictures && mount /usr/share/nginx/html/private/pictures; else mount /usr/share/nginx/html/private/pictures; fi
     user:               'root'
     chdir:              '/'
