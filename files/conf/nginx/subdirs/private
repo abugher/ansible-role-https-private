@@ -1,5 +1,5 @@
   location /private {
-    root /usr/share/nginx/html;
+    root                        /usr/share/nginx/html;
     autoindex                   on;
     try_files                   $uri $uri/ =404;
     auth_basic                  'Private Material';
