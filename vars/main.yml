@@ -35,6 +35,11 @@ install_files:
     mode:               '0644'
     src:                'files/conf/nginx/subdirs/private'
     dest:               '/etc/nginx/subdirs/private'
+  - owner:              'root'
+    group:              'root'
+    mode:               '0644'
+    src:                'files/fancyindex-override.css'
+    dest:               '/usr/share/nginx/html/fancyindex-override.css'
 restart_services:
   - 'nginx'
   - 'nginx'

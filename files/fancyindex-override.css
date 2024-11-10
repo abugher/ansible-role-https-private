@@ -1,0 +1,26 @@
+@import                 url("style.css");
+
+{
+  background:           var(--background-color);
+}
+
+tr:nth-child(even) {
+  background:           var(--background-color);
+}
+
+th {
+  background:           var(--background-color);
+  border-bottom-color:  var(--border-color);
+}
+
+#list {
+  border-color:         var(--border-color);
+}
+
+a {
+  color:                var(--link-new);
+}
+
+a:hover {
+  color:                var(--link-active);
+}
