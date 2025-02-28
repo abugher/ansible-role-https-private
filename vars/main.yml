@@ -21,11 +21,6 @@ create_files:
     mode:               '0750'
     path:               '/usr/share/nginx/html/private/pictures'
     state:              'directory'
-  - owner:              'root'
-    group:              'www-data'
-    mode:               '0750'
-    path:               '/usr/share/nginx/html/private/content'
-    state:              'directory'
 shell_commands_ignore_change:
   - command:            if mountpoint /usr/share/nginx/html/private/pictures; then umount /usr/share/nginx/html/private/pictures && mount /usr/share/nginx/html/private/pictures; else mount /usr/share/nginx/html/private/pictures; fi
     user:               'root'
